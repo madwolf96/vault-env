@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"context"
+	"github.com/madwolf96/vault-env/pkg/client"
+	vaultenv "github.com/madwolf96/vault-env/pkg/vault-env"
 	"github.com/spf13/cobra"
 	"log"
-	"vault-env/pkg/client"
-	vaultenv "vault-env/pkg/vault-env"
 )
 
 var (

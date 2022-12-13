@@ -1,6 +1,6 @@
 package main
 
-import "vault-env/cmd"
+import "github.com/madwolf96/vault-env/cmd"
 
 func main() {
 	err := cmd.Execute()
