@@ -1,4 +1,4 @@
-module vault-env
+module github.com/madwolf96/vault-env
 
 go 1.19
 
