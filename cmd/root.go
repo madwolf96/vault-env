@@ -2,8 +2,9 @@ package cmd
 
 import (
 	"context"
+	"github.com/madwolf96/vault-env/pkg/action"
 	"github.com/madwolf96/vault-env/pkg/client"
-	vaultenv "github.com/madwolf96/vault-env/pkg/vault-env"
+
 	"github.com/spf13/cobra"
 	"log"
 )
@@ -25,8 +26,8 @@ var (
 			if err != nil {
 				log.Fatalf("Unable to read the super secret password from the vault: %v", err)
 			}
-			vaultEnv := vaultenv.VaultEnv{}
-			if err := vaultEnv.Eject(secret); err != nil {
+			action := action.Action{}
+			if err := action.Eject(secret); err != nil {
 				log.Fatalf("Unable to unset environment variables: %v", err)
 			}
 		},
@@ -42,8 +43,8 @@ var (
 			if err != nil {
 				log.Fatalf("Unable to read the super secret password from the vault: %v", err)
 			}
-			vaultEnv := vaultenv.VaultEnv{}
-			if err := vaultEnv.Inject(secret); err != nil {
+			action := action.Action{}
+			if err := action.Inject(secret); err != nil {
 				log.Fatalf("Unable to export environment variables: %v", err)
 			}
 		},
